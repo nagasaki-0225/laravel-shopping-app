@@ -1,0 +1,13 @@
+.example{
+    display: block;
+    width: 300px;
+    padding: 15px ;
+    margin: 30px;
+    background: #B3F6AE;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+}
+.example:hover{
+    background: #7cd475;
+}
