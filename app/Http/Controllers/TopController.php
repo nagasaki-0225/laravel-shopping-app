@@ -13,5 +13,17 @@ class TopController extends Controller
     public function test(){
         return view('test');
     }
+
+    public function dish() {        
+        return view('dish');
+        }
+
+    public function stock() {        
+        return view('stock');
+        }
+
+    public function rist() {        
+        return view('rist');
+        }
     //
 }

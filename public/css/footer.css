@@ -7,6 +7,7 @@
     color: #FFF;
     text-decoration: none;
     text-align: center;
+    font-family: "Arial", "Meiryo";
 }
 .example:hover{
     background: #7cd475;
