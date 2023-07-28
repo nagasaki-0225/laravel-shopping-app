@@ -2,14 +2,17 @@
 <div class="container">
 <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 
-    </div>
-    <div class="d-flex justify-content-center align-items-center bg-dark fixed-bottom" style="height: 60px; z-index: auto;">
+<div class="d-flex justify-content-center align-items-center bg-dark fixed-bottom" style="height: 100px; z-index: auto;">
 {{-- ＃にはリンク先を指定する --}}
-<a href="#" class="example rounded">M</a>
-<a href="#" class="example rounded">D</a>
-<a href="#" class="example rounded">R</a>
-<a href="#" class="example rounded">S</a>
+<a href="{{ route('home') }}" class="example rounded">M</a>
+<a href="{{ route('dish') }}" class="example rounded">D</a>
+<a href="{{ route('rist') }}" class="example rounded">R</a>
+<a href="{{ route('stock') }}" class="example rounded">S</a>
+
+</div>
 <br>
-<p class="text-white small mb-0">&copy; {{ config('app.name', 'Laravel') }} All rights reserved.</p>
+<div style="position: absolute; bottom: 2px; right: 2px; center">
+<p class="text-white bg-dark">&copy; {{ config('app.name', 'Laravel') }} All rights reserved.</p>
+</div>
 </div> 
 </footer>

@@ -17,9 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('/ ページのurl ',[\App\Http\Controllers\TopController::class,'    '])->name('   ');
+
+
 Route::get('/',[App\Http\Controllers\TopController::class,'home'])->name('name');
 
 Route::get('/test',[\App\Http\Controllers\TopController::class,'test'])->name('test');
+
+Route::get('/dish',[\App\Http\Controllers\TopController::class,'dish'])->name('dish');
+
+Route::get('/stock',[\App\Http\Controllers\TopController::class,'stock'])->name('stock');
+
+Route::get('/rist',[\App\Http\Controllers\TopController::class,'rist'])->name('rist');
 
 Auth::routes();
 
