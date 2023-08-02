@@ -1,3 +1,9 @@
-body{
-    background-color: blue;
+.button_frame{
+padding-bottom:80px;
+padding-right: 20px;
+}
+.plusbutton{
+font-size: 18px;
+border: 1px solid #000;
+border-radius: 10px;
 }

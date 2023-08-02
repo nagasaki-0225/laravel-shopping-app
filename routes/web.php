@@ -26,10 +26,20 @@ Route::get('/test',[\App\Http\Controllers\TopController::class,'test'])->name('t
 
 Route::get('/dish',[\App\Http\Controllers\TopController::class,'dish'])->name('dish');
 
-Route::get('/stock',[\App\Http\Controllers\TopController::class,'stock'])->name('stock');
+Route::get('/dish/create',[\App\Http\Controllers\TopController::class,'create'])->name('dish.create');
 
-Route::get('/rist',[\App\Http\Controllers\TopController::class,'rist'])->name('rist');
 
+Route::get('/post',[\App\Http\Controllers\TopController::class,'dish'])->name('dish');
+
+
+Route::get('/stock',[\App\Http\Controllers\StockController::class,'index'])->name('stock');
+
+Route::get('/stock/create',[\App\Http\Controllers\StockController::class,'create'])->name('stock.create');
+
+Route::post('/stock',[\App\Http\Controllers\StockController::class,'store'])->name('stock.store');
+
+
+Route::get('/list',[\App\Http\Controllers\TopController::class,'list'])->name('list');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
