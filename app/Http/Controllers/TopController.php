@@ -18,12 +18,10 @@ class TopController extends Controller
         return view('dish');
         }
 
-    public function stock() {        
-        return view('stock');
-        }
+    
 
     public function rist() {        
-        return view('rist');
+        return view('list');
         }
     //
 }
