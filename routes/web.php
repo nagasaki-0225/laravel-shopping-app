@@ -24,13 +24,11 @@ Route::get('/',[App\Http\Controllers\TopController::class,'home'])->name('name')
 
 Route::get('/test',[\App\Http\Controllers\TopController::class,'test'])->name('test');
 
-Route::get('/dish',[\App\Http\Controllers\TopController::class,'dish'])->name('dish');
+// フォームの処理と作成
+Route::get('/dish/create',[\App\Http\Controllers\DishController::class,'create'])->name('dish.create');
 
-Route::get('/dish/create',[\App\Http\Controllers\TopController::class,'create'])->name('dish.create');
-
-
-Route::get('/post',[\App\Http\Controllers\TopController::class,'dish'])->name('dish');
-
+// データ挿入
+Route::post('/dish',[\App\Http\Controllers\DishController::class,'store'])->name('dish.store');
 
 Route::get('/stock',[\App\Http\Controllers\StockController::class,'index'])->name('stock');
 
