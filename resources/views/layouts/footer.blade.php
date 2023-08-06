@@ -5,7 +5,7 @@
 <div class="d-flex justify-content-center align-items-center bg-dark fixed-bottom" style="height: 100px; z-index: auto;">
 {{-- ＃にはリンク先を指定する --}}
 <a href="{{ route('home') }}" class="example rounded">M</a>
-<a href="{{ route('dish') }}" class="example rounded">D</a>
+<a href="{{ route('dish.create') }}" class="example rounded">D</a>
 <a href="{{ route('list') }}" class="example rounded">R</a>
 <a href="{{ route('stock') }}" class="example rounded">S</a>
 
