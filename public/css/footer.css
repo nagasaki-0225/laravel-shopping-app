@@ -1,14 +1,47 @@
 .example{
-    display: block;
-    width: 300px;
-    padding: 15px ;
-    margin: 30px;
+    display: inline-block;
+    width:60px;
+    height: 60px;
+    font-family: 'Ingrid Darling', 'cursive';
+    font-size: 50px;
+    padding: 0px 0px 10px 0px ;
+    margin: 5px;
     background: #B3F6AE;
     color: #FFF;
     text-decoration: none;
     text-align: center;
-    font-family: "Arial", "Meiryo";
+    position: relative;
+    bottom: 20px;
 }
 .example:hover{
-    background: #7cd475;
+    background: #B3F6AE;
 }
+.example-btn{
+    display: inline-block;
+    font-family: 'Ingrid Darling', 'cursive';
+    font-size: 60px;
+    color: #FFF;
+    /* 下線を消す */
+    text-decoration: none;
+    padding: 0px;
+    margin: 0px 40px;
+}
+.pc{
+    display: inline-block;
+    position: relative;
+    left: 500px;
+
+
+}
+@media(min-width:751px){
+    .sp{
+        display: none !important;
+    }
+}
+@media(max-width:750px){
+    .pc{
+        display: none !important;
+    }
+    
+}
+

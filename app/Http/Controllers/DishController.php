@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Auth;
 
 class DishController extends Controller
 {
+    public function index() {        
+        return view('dish.index');
+    }
+
     public function create() {        
         return view('dish.create');
     }

@@ -14,7 +14,7 @@ class TopController extends Controller
         return view('test');
     }
 
-    public function rist() {        
+    public function list() {        
         return view('list');
         }
     //
