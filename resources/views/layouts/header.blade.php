@@ -5,14 +5,11 @@
             <a class="navbar-brand" href="{{ url('/') }}">
                 {{ config('app.name', 'Laravel') }}
             </a>
-            
             <div class="pc">
-            
-                    <a href="{{ route('dish.index') }}" class="example-btn">dish</a>
-                    <a href="{{ route('list') }}" class="example-btn">list</a>
-                    <a href="{{ route('stock') }}" class="example-btn">stock</a> 
-                    <a href="{{ route('home') }}" class="example-btn">mypage</a>
-            
+                <a href="{{ route('dish.index') }}" class="example-btn">dish</a>
+                <a href="{{ route('list') }}" class="example-btn">list</a>
+                <a href="{{ route('stock') }}" class="example-btn">stock</a> 
+                <a href="{{ route('home') }}" class="example-btn">mypage</a>
             </div>
             <div button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
@@ -60,8 +57,6 @@
                     @endguest
                 </ul>
             </div>
-
-            
         </div>
     </nav>
 </header>

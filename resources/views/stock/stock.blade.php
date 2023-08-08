@@ -6,38 +6,35 @@
 @section('content')
 
 <div class="container">
-<h1>stock</h1>
-<br>
-<h1>在庫かんり</h1>
+	<h1>stock</h1>
+	<br>
+	<h1>在庫かんり</h1>
 
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">材料</th>
-        <th scope="col">在庫</th>
-        <th scope="col">金額</th>
-        <th scope="col">店名</th>
-      </tr>
-    </thead>
-    <tbody>
-        @foreach ($stocks as $stock)
-            <tr>
-                <td>>{{$stock->name}}</td>
-                <td>{{$stock->number}}</td>
-                <td>{{$stock->price}}</td>
-                <td>{{$stock->shop_name}}</td>
-            </tr>
-        @endforeach
-    
-    </tbody>
-  </table>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">材料</th>
+				<th scope="col">在庫</th>
+				<th scope="col">金額</th>
+				<th scope="col">店名</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach ($stocks as $stock)
+				<tr>
+					<td>>{{$stock->name}}</td>
+					<td>{{$stock->number}}</td>
+					<td>{{$stock->price}}</td>
+					<td>{{$stock->shop_name}}</td>
+				</tr>
+			@endforeach
+		</tbody>
+	</table>
 
-
-<div class="position-fixed bottom-0 end-0 ">
-<div class="mb-5 button_frame">
-
-
-
-<a href="{{ route('stock.create') }}" class="text-deceoration-none plusbutton"><i class="fa-solid fa-plus"></i></a>
-</div></div></div>
+	<div class="position-fixed bottom-0 end-0 ">
+		<div class="mb-5 button_frame">
+			<a href="{{ route('stock.create') }}" class="text-deceoration-none plusbutton"><i class="fa-solid fa-plus"></i></a>
+		</div>
+	</div>
+</div>
 @endsection

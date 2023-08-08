@@ -1,20 +1,17 @@
 @extends('layouts.app')
+
 @section('pagename') stock @endsection
+
 @section('pagecss')
-<link rel="stylesheet" href="{{ asset('css/stock.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/stock.css') }}">
 @endsection
+
 @section('content')
 <div class="container">
     <div class="row">
     
     </div> 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
     <form action="{{ route('stock.store') }}" method="post">
         @csrf
         <div>
@@ -36,6 +33,4 @@
         <button type="submit">確定</button>
     </form>
 </div>
-
-
 @endsection

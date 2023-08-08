@@ -13,34 +13,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
 
 // Route::get('/ ページのurl ',[\App\Http\Controllers\TopController::class,'    '])->name('   ');
 
+// ログインしていないと見れないページ
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/',[App\Http\Controllers\TopController::class,'home'])->name('name');
 
-Route::get('/',[App\Http\Controllers\TopController::class,'home'])->name('name');
+    Route::get('/test',[\App\Http\Controllers\TopController::class,'test'])->name('test');
+    
+    Route::get('/dish',[\App\Http\Controllers\DishController::class,'index'])->name('dish.index');
+    // フォームの処理と作成
+    Route::get('/dish/create',[\App\Http\Controllers\DishController::class,'create'])->name('dish.create');
+    // データ挿入
+    Route::post('/dish',[\App\Http\Controllers\DishController::class,'store'])->name('dish.store');
+    
 
-Route::get('/test',[\App\Http\Controllers\TopController::class,'test'])->name('test');
-
-// フォームの処理と作成
-Route::get('/dish/create',[\App\Http\Controllers\DishController::class,'create'])->name('dish.create');
-
-Route::get('/dish',[\App\Http\Controllers\DishController::class,'index'])->name('dish.index');
-
-
-// データ挿入
-Route::post('/dish',[\App\Http\Controllers\DishController::class,'store'])->name('dish.store');
-
-Route::get('/stock',[\App\Http\Controllers\StockController::class,'index'])->name('stock');
-
-Route::get('/stock/create',[\App\Http\Controllers\StockController::class,'create'])->name('stock.create');
-
-Route::post('/stock',[\App\Http\Controllers\StockController::class,'store'])->name('stock.store');
-
-
-Route::get('/list',[\App\Http\Controllers\TopController::class,'list'])->name('list');
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/stock',[\App\Http\Controllers\StockController::class,'index'])->name('stock');
+    Route::get('/stock/create',[\App\Http\Controllers\StockController::class,'create'])->name('stock.create');
+    Route::post('/stock',[\App\Http\Controllers\StockController::class,'store'])->name('stock.store');
+    
+    Route::get('/list',[\App\Http\Controllers\TopController::class,'list'])->name('list');
+    
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});

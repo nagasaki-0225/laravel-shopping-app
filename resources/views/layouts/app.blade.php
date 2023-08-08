@@ -24,17 +24,13 @@
 <body>
     <div id="app">
         @include('layouts.header')
-
-
         <main class="">
             @if (session('flash_message'))
                 <p class="text-success">{{ session('flash_message') }}</p>
             @endif
-
             @yield('content')
         </main>
         @include('layouts.footer')
-
     </div>
 </body>
 </html>

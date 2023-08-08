@@ -9,12 +9,14 @@ use Illuminate\Support\Facades\Auth;
 class DishController extends Controller
 {
     public function index() {
-        $dishes=Dish::where("user_id",Auth::id())->get();       
+        // Authクラスは、ログインしているユーザーの情報を取得するためのクラス
+        $dishes=Dish::where("user_id", Auth::id())->get();
+        // resources/views/dish/index.blade.php を表示
         return view('dish.index', compact('dishes'));
     }
 
     public function create() {      
-        $dishes=Dish::where("user_id",Auth::id())->get();    
+        $dishes=Dish::where("user_id", Auth::id())->get();    
         return view('dish.create',compact('dishes'));
     }
 
