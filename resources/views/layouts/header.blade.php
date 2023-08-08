@@ -8,7 +8,7 @@
             
             <div class="pc">
             
-                    <a href="{{ route('dish.create') }}" class="example-btn">dish</a>
+                    <a href="{{ route('dish.index') }}" class="example-btn">dish</a>
                     <a href="{{ route('list') }}" class="example-btn">list</a>
                     <a href="{{ route('stock') }}" class="example-btn">stock</a> 
                     <a href="{{ route('home') }}" class="example-btn">mypage</a>

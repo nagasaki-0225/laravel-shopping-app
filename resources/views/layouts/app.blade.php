@@ -26,7 +26,11 @@
         @include('layouts.header')
 
 
-        <main class="p-0">
+        <main class="">
+            @if (session('flash_message'))
+                <p class="text-success">{{ session('flash_message') }}</p>
+            @endif
+
             @yield('content')
         </main>
         @include('layouts.footer')
