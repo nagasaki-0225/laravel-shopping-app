@@ -10,25 +10,23 @@
 
 <div class="container">
     <div class="row">
+        
         {{-- 料理の欄 --}}
-        @foreach($dishes as $dish)
-                     <div>
-                         <div>
-                             <h2>{{ $dish->name}}</h2>     
-                         </div>
-                     </div>
-                 @endforeach  
+       
         <div class="col-md-9 bg-primary" style="height:300px;">
         {{-- 検索バーの挿入 --}}
 
 
         <div class="row">
+            @foreach($dishes as $dish)
             <div class="col-md-6">
-                <h1>料理名 </h1>
-            </div>
-            <div class="col-md-6">
-                <h1>料理名</h1>
-            </div>
+                <h1>{{ $dish->name}}</h1>
+            </div>   
+                
+        
+            @endforeach  
+        
+           
         </div>
 
       

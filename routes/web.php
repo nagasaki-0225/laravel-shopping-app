@@ -27,6 +27,9 @@ Route::get('/test',[\App\Http\Controllers\TopController::class,'test'])->name('t
 // フォームの処理と作成
 Route::get('/dish/create',[\App\Http\Controllers\DishController::class,'create'])->name('dish.create');
 
+Route::get('/dish',[\App\Http\Controllers\DishController::class,'index'])->name('dish.index');
+
+
 // データ挿入
 Route::post('/dish',[\App\Http\Controllers\DishController::class,'store'])->name('dish.store');
 
