@@ -21,7 +21,11 @@
         <div>
             <label for="number">在庫</label>
             <input type="number" id="number" name="number"/>
-        </div>   
+        </div>
+        <div>   
+            <label for="item_unit">単位</label>
+            <input type="text" id="item_unit" name="item_unit"/>
+        </div>    
         <div>
             <label for="price">金額</label>
             <input type="number" id="price" name="price"/>

@@ -33,6 +33,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/stock',[\App\Http\Controllers\StockController::class,'index'])->name('stock');
     Route::get('/stock/create',[\App\Http\Controllers\StockController::class,'create'])->name('stock.create');
     Route::post('/stock',[\App\Http\Controllers\StockController::class,'store'])->name('stock.store');
+
+     // 在庫データの更新ページ
+    Route::get('/stock/edit', [StockController::class, 'edit'])->name('stock.edit');
+    // 在庫データの更新機能
+    Route::patch('/posts/{post}', [StockController::class, 'update'])->name('stock.update');
+
     
     Route::get('/list',[\App\Http\Controllers\TopController::class,'list'])->name('list');
     

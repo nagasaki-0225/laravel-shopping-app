@@ -15,6 +15,7 @@
 			<tr>
 				<th scope="col">材料</th>
 				<th scope="col">在庫</th>
+				<th scope="col">単位</th>
 				<th scope="col">金額</th>
 				<th scope="col">店名</th>
 			</tr>
@@ -24,8 +25,10 @@
 				<tr>
 					<td>>{{$stock->name}}</td>
 					<td>{{$stock->number}}</td>
+					<td>{{$stock->item_unit}}</td>
 					<td>{{$stock->price}}</td>
 					<td>{{$stock->shop_name}}</td>
+                    <td><button><i class="fa-solid fa-pencil"></i></button></td>
 				</tr>
 			@endforeach
 		</tbody>
