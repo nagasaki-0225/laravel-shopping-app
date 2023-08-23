@@ -31,7 +31,11 @@ class StockController extends Controller
         return redirect()->route('stock')->with('flash_message', 'データを登録しました。');
     }
     public function update(Request $request, Stock $stock) {
-        
+    
+        $request->validate([
+            'title' => 'required',
+        ]);
+
         $stock->name = $request->input('name');
         $stock->number = $request->input('number');
         $stock->item_unit = $request->input('item_unit');
