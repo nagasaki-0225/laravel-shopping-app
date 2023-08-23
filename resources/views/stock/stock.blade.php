@@ -1,12 +1,19 @@
 @extends('layouts.app')
 @section('pagename') stock @endsection
 @section('pagecss')
-<link rel="stylesheet" href="{{ asset('css/test.css') }}">
+<link rel="stylesheet" href="{{ asset('css/stock.css') }}">
 @endsection
 @section('content')
 
 <div class="container">
 	<h1>在庫管理</h1>
+	<div class="search">
+		<form action="{{ route('stock') }}" method="GET"> 
+			<input type="text" name="keyword" value="{{ $keyword }}" placeholder="search:" class="searchTerm" >
+	<button type="submit" class="searchButton"><i class="fa fa-search"></i></button>
+		</form>
+	</div>
+
 
 	<table class="table">
 		<thead>
@@ -40,7 +47,7 @@
 		@endforeach                       
 
 
-	<div class="position-fixed bottom-0 end-0 ">
+	<div class="position-fixed bottom-10 end-0 ">
 		<div class="mb-1 button_frame">
 			<a href="#" class="px-2 m-1 fs-5 link-dark text-decoration-none" data-bs-toggle="modal" data-bs-target="#addStockModal"><h1><i class="fa-solid fa-square-plus" style="color: #D9D9D9;"></i>追加</h1></a>
 		</div>

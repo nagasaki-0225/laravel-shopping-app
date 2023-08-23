@@ -10,11 +10,23 @@ use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
 {
-    public function index() {
+    public function index(Request $request) {
         // Authクラスは、ログインしているユーザーの情報を取得するためのクラス
         $dishes=Dish::where("user_id", Auth::id())->get();
         // resources/views/dish/index.blade.php を表示
-        return view('dish.index', compact('dishes'));
+
+        $keyword = $request->input('keyword');
+
+        $query = Dish::query();
+
+        if(!empty($keyword)) {
+            $query->where('name', 'LIKE', "%{$keyword}%");
+        }
+
+        $dishes = $query->get();
+
+        return view('dish.index', compact('dishes','keyword'));
+    
     }
 
     // 料理の詳細ページを表示（dish.show）

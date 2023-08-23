@@ -5,7 +5,7 @@
                 <h5 class="modal-title" id="addDishModalLabel">追加</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
             </div>
-            <form action="{{ route('add_dish.store') }}" method="post">
+            <form action="{{ route('add_dish.store', $dish) }}" method="post">
                 @csrf
                 <div class="modal-body">
                     <div class="mb-3">
