@@ -9,6 +9,14 @@ class Stock extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'number',
+        'item_unit',
+        'price',
+        'shop_name',
+    ];
+
     public function user() {
         return $this->belongsTo(User::class);
     }

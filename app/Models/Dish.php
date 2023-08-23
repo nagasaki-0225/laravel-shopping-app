@@ -15,4 +15,5 @@ class Dish extends Model
     public function stocks() {
         return $this->belongsToMany(Stock::class)->withTimestamps();
     }    
+    
 }

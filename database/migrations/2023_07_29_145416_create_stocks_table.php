@@ -18,6 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('number')->default(0);
+            $table->string('item_unit');
             $table->string('shop_name')->nullable();
             $table->integer('price')->default(0);
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
