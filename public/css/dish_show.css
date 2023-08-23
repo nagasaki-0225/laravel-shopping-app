@@ -1,0 +1,12 @@
+
+
+.icon{
+    position: relative;
+    display: inline-block;
+}
+
+.icon a{
+    position: absolute;
+    bottom:0%;
+    right: 0%;
+}

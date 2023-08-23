@@ -9,10 +9,22 @@ use Illuminate\Support\Facades\Auth;
 
 class StockController extends Controller
 {
-    public function index() { 
+    public function index(Request $request) { 
         // Select * from stocks where user_id = 1;
-        $stocks=Stock::where("user_id", Auth::id())->get();       
-        return view('stock.stock', compact('stocks'));
+        $stocks=Stock::where("user_id", Auth::id())->get();    
+        
+        $keyword = $request->input('keyword');
+
+        $query = Stock::query();
+
+        if(!empty($keyword)) {
+            $query->where('name', 'LIKE', "%{$keyword}%");
+        }
+
+        $stocks = $query->get();
+
+        return view('stock.stock', compact('stocks','keyword'));
+    
     }
     public function create() {        
         return view('stock.create');
@@ -50,7 +62,7 @@ class StockController extends Controller
             //
             $stock->delete();
     
-            return redirect()->route('stock')->with('flash_message', 'データを更新しました。');       
+            return redirect()->route('stock')->with('flash_message', 'データを削除しました。');       
        }  
 }
 
