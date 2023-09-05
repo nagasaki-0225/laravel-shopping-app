@@ -13,7 +13,7 @@ class Dish extends Model
         return $this->belongsTo(User::class);
     }
     public function stocks() {
-        return $this->belongsToMany(Stock::class)->withTimestamps();
+        return $this->belongsToMany(Stock::class)->withTimestamps()->withPivot('item_number');
     }    
     
 }
