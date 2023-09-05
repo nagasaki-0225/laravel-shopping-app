@@ -17,7 +17,7 @@
 			</div>
 		</div>
 	
-
+		
 		<div class="col-md-9">
 			<div class="fs-2 p-2 fw-bold text-center bd-highlight">{{$dish->name}}</div>	
 			<table class="table">

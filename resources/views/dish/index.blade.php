@@ -32,21 +32,20 @@
         </div>
 
         {{-- 選択中の料理の表示欄 --}}
-        <div class="col-md-3 bg-secondary rounded text-center pt-4">
+        <div class="col-md-3 bg-secondary rounded text-center pt-4 d-block">
             <div class="selectDish">
-                <h3>選択中</h3>
-            <input type ="checkbox">
+                <h3>選択中</h3> 
+                <form action="#" method="post">
+                    <input type ="checkbox">
 
 
 
+                    <h3><i class="fa-solid fa-circle-plus" style="color: #ffffff;"></i><input type="submit" value="確定" class="okButton"> 
+                    <h3><i class="fa-solid fa-circle-xmark" style="color: #ffffff;"></i><input type="reset" value="リセット" class="resetButton">
 
-            {{-- 確定ボタン --}}
-
-            {{-- 削除ボタン --}}
-
-            
-            </div>
-            
+                </form>
+                
+            </div>       
         </div>
     </div> 
     <br>

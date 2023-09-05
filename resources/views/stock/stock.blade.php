@@ -8,6 +8,14 @@
 <div class="container">
 	<h1>在庫管理</h1>
 
+	<div class="search">
+        <form action="{{ route('stock') }}" method="GET"> 
+            <input type="text" name="keyword" value="{{ $keyword }}" placeholder="search:" class="searchTerm" >
+    <button type="submit" class="searchButton"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+	<br>
+
 	<table class="table">
 		<thead>
 			<tr>

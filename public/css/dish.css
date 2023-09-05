@@ -36,3 +36,14 @@
 h3{
   color: #fff;
 }
+
+.okButton{
+  border: none;
+  background-color: transparent;
+}
+
+.resetButton{
+  border: none;
+  background-color: transparent;
+
+}
