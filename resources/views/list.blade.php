@@ -8,4 +8,14 @@
 
 @section('content')
 <h1>list</h1>
+
+@foreach ($dishes as $dish)
+    @foreach ($dish->stocks() as $stock)
+    <p>{{ $stock->name }}</p>
+    @endforeach
+@endphp
+<p>{{ $dissh->amount }}</p>
+    
+@endforeach
+
 @endsection

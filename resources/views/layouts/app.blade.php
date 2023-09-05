@@ -32,5 +32,8 @@
         </main>
         @include('layouts.footer')
     </div>
+    {{-- jqueryの読み込み --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    @yield('pagejs')
 </body>
 </html>

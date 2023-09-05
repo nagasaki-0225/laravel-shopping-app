@@ -23,7 +23,7 @@
             <div class="row">
                 @foreach($dishes as $dish)
                 <div class="col-md-4 py-3">
-                    <input type = "checkbox">
+                    <input type = "checkbox" class="dish_name" value="{{$dish->name}}" id="{{$dish->id}}"/>
                     <img width=100 height=100  src="{{$dish->image_path ?? "https://placehold.jp/150x150.png"}}" class="rounded-circle">
                     <a href="{{route('dish.show', $dish)}}" class= "text-decoration-none link-dark">{{$dish->name}}</a>     
                 </div>
@@ -35,8 +35,12 @@
         <div class="col-md-3 bg-secondary rounded text-center pt-4 d-block">
             <div class="selectDish">
                 <h3>選択中</h3> 
-                <form action="#" method="post">
-                    <input type ="checkbox">
+                {{-- getでlistページに値を渡す --}}
+                <form action="{{ route('list')}}" method="get">
+                    <div class="selected_dishes">
+
+                    </div>
+                    
 
 
 
@@ -61,6 +65,9 @@
         </div>
     </div>
 </div>
-   
 
+@endsection
+
+@section('pagejs')
+    <script src="{{ asset('js/dish.js') }}"></script>
 @endsection
