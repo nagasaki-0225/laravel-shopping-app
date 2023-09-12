@@ -2,21 +2,21 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    <div class="row">   
+       
+        {{-- @foreach($users as $user) --}}
+        <h3>ユーザー名：         <h3>
+        {{-- @endforeach --}}
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+        <a href="#" class="example">登録情報変更</a>
+        <a href="#" class="example">ログアウト</a>
 
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
+
+            
+
+                
+        
+        
         </div>
     </div>
 </div>

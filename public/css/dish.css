@@ -4,7 +4,7 @@
   }
 
 .searchButton {
-    width: 5%;
+    width: 15%;
     height: 36px;
     border: 1px solid #d9d9d9;
     background: #d9d9d9;
@@ -16,7 +16,7 @@
   }
 
   .searchTerm {
-    width: 50%;
+    width: 80%;
     border: 3px solid #d9d9d9;
     border-right: none;
     padding: 5px;
@@ -26,11 +26,13 @@
     color: #fff;
     font-family: 'Ingrid Darling', 'cursive';
     background-color:#d9d9d9;
+    font-size: 30px;
   }
 
 .selectDish{
   display: block;
   color: #fff;
+  
 }
 
 h3{
@@ -40,10 +42,104 @@ h3{
 .okButton{
   border: none;
   background-color: transparent;
+  color: #fff;
 }
 
 .resetButton{
   border: none;
   background-color: transparent;
+  color: #fff;
+}
+
+.newDish{
+    position: fixed;
+    bottom: 200px;
+    right: 50px;
+    width: 25%;
+  }
+
+  .dishTerm{
+    display: inline;
+    margin-bottom:20px;
+  }
+
+.form-control{
+  position:absolute;
+  left: 0px;
+  width: 80%;
+  border: 3px solid #b3f6ae;
+  padding: 5px;
+  height: 35px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  font-family: 'Ingrid Darling', 'cursive';
+  background-color:#fff;
+  color: #d9d9d9;
+  font-size: 30px;
+}
+
+.dishButton{
+  position:absolute;
+  right: 0px;
+  width: 20%;
+  height: 35px;
+  border: 3px solid #b3f6ae;
+  background: #b3f6ae;
+  text-align: center;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+@media(max-width:425px){
+  .newDish{
+    width:80%;
+    position: fixed;
+    bottom: 150px;
+    right: 10%;
+  }
+  #select{
+    background-color: transparent;
+    width: 50%;
+    height: 60%;
+    position: fixed;
+    top: 130px;
+    right: 100%;
+    z-index: 100;
+    margin: 5px 0px;
+  }
+  .select-content-bg{
+      width: 50%;
+      height: 60%;
+      position: fixed;
+      top: 125px;
+      right: 100%;
+      background-color: #d9d9d9;
+      border-radius: 10px; 
+  }
+  #select.clicked{
+    right: 0;/*向き変更*/;
+  }
+  .select-content-bg.clicked {
+    right: 0;
+  }
+}
+
+@media(min-width:426px){
+  #slideToggle{
+    display: none !important;
+  }
+  #select{
+    background-color: #d9d9d9;
+  }
 
 }
+
+#slideToggle{
+  position: fixed;
+  right: 0;
+  top:100px;
+  background-color: transparent;
+  border: 0;
+}
+

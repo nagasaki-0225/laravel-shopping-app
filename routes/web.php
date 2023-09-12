@@ -54,4 +54,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/list',[\App\Http\Controllers\TopController::class,'list'])->name('list');
     
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 });

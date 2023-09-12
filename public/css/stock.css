@@ -26,4 +26,10 @@
   color: #fff;
   font-family: 'Ingrid Darling', 'cursive';
   background-color:#d9d9d9;
+  font-size: 30px;
+}
+.addStock{
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
 }
