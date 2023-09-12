@@ -30,15 +30,6 @@
 }
 .addStock{
   position: fixed;
-  bottom: 10%;
-  right: 3%;
-}
-
-@media(max-width:425px){
-  .searchButton {
-    width: 15%;
-  }
-  .searchTerm{
-    width: 80%;
-}
+  bottom: 100px;
+  right: 100px;
 }
