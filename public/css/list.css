@@ -1,0 +1,7 @@
+.total{
+    position: fixed;
+    bottom: 100px;
+    right: 300px;
+    font-family: 'Ingrid Darling', 'cursive';
+    font-size: 50px;
+}

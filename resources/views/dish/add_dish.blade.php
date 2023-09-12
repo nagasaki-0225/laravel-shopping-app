@@ -19,15 +19,16 @@
                                     {{ $stock->name }}   ({{$stock->item_unit}})
                                 </label>
                                 {{-- valueの値 --}}
-                                
-                                <input type="number" value="{{ old('item_number', $stock->pivot->item_number ?? '' ) }}"                                
+                            <input type="number" value="{{ old('item_number', $stock->pivot->item_number ?? '' ) }}"                                
                                 class="form-control" id="item-number-{{ $stock->id }}" name="item_numbers[{{ $stock->id }}]">
+                            
                                
                                                                     
                         
 
                             </div>
                         @endforeach
+                        
                     </div>
                 </div>
                 <div class="modal-footer">

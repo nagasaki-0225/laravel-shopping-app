@@ -21,7 +21,7 @@
 .example-btn{
     display: inline-block;
     font-family: 'Ingrid Darling', 'cursive';
-    font-size: 60px;
+    font-size: 4vw;
     color: #FFF;
     /* 下線を消す */
     text-decoration: none;
@@ -32,7 +32,7 @@
 .pc{
     display: inline-block;
     position: relative;
-    left: 300px;
+    left:15%;
 }
 
 @media(min-width:751px){
@@ -45,5 +45,7 @@
     .pc{
         display: none !important;
     }
-    
 }
+
+
+    
