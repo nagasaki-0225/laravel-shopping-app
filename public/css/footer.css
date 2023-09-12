@@ -29,23 +29,36 @@
     margin: 0px 40px;
 }
 
-.pc{
-    display: inline-block;
-    position: relative;
-    left:15%;
-}
 
-@media(min-width:751px){
+@media(min-width:768px){
     .sp{
         display: none !important;
     }
 }
 
-@media(max-width:750px){
+@media(max-width:767px){
     .pc{
         display: none !important;
     }
 }
 
+@media(max-width:768px){
+    .pc{
+        display: inline-block;
+        position: relative;
+        left:5%;
+    }
+}
+
+@media(min-width:769px){
+    .pc{
+        position: relative;
+        left:40%;
+    }
+}
+.navbar-brand{
+    font-family: 'Ingrid Darling', 'cursive';
+    font-size: 40px;
+}
 
     
