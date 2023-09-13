@@ -3,9 +3,10 @@
   display: inline;
 }
 
+
 .searchButton {
   width: 5%;
-  height: 36px;
+  height: 35px;
   border: 1px solid #d9d9d9;
   background: #d9d9d9;
   text-align: center;
@@ -40,5 +41,5 @@
   }
   .searchTerm{
     width: 80%;
-}
+  }
 }

@@ -8,7 +8,15 @@
 
    {{-- ユーザー名の変更 --}}
    {{-- メールアドレスの変更 --}}
-   {{-- パスワードの変更 --}}
+   <form method="POST" action="{{route('user.update')}}">
+    @csrf
+    <input name="name" placeholder="ユーザー名" />
+    <input name="email" placeholder="e-mail" />
+    <button>更新する</button>
+  </form>
+
+
+
 
 
             

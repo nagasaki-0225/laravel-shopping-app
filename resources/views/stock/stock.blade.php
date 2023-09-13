@@ -47,7 +47,6 @@
 
 
 	<div class="addStock">
-		
 		<div class="mb-1 button_frame">
 			<a href="#" class="px-2 m-1 fs-5 link-dark text-decoration-none" data-bs-toggle="modal" data-bs-target="#addStockModal"><h1><i class="fa-solid fa-square-plus" style="color: #D9D9D9;"></i>追加</h1></a>
 		</div>

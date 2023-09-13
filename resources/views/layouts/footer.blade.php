@@ -9,7 +9,7 @@
         <a href="{{ route('dish.index') }}" class="example rounded">D</a>
         <a href="{{ route('list') }}" class="example rounded">L</a>
         <a href="{{ route('stock') }}" class="example rounded">S</a>
-        <a href="{{ route('home') }}" class="example rounded">M</a>
+        <a href="{{ route('my_page.index') }}" class="example rounded">M</a>
     </div>
     <div style="position: absolute; bottom: 0px; right: 0px; center">
         <p class="text-white">&copy; {{ config('app.name', 'Laravel') }} All rights reserved.</p>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StockController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ Auth::routes();
 
 // ログインしていないと見れないページ
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/',[App\Http\Controllers\TopController::class,'home'])->name('name');
+    Route::get('/top',[App\Http\Controllers\TopController::class,'top'])->name('top');
 
     Route::get('/test',[\App\Http\Controllers\TopController::class,'test'])->name('test');
     
@@ -53,6 +54,11 @@ Route::group(['middleware' => 'auth'], function () {
     
     Route::get('/list',[\App\Http\Controllers\TopController::class,'list'])->name('list');
     
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('my_page.index');
+    Route::post('/user/update',[App\Http\Controllers\HomeController::class, 'update'])->name('user.update');
+    Route::get('/mypage/edit', [App\Http\Controllers\HomeController::class, 'edit'])->name('my_page.edit');
+
+    Route::get('/password/change',[App\Http\Controllers\ChangePasswordController::class, 'edit'])->name('my_page.edit_password');
+    Route::put('/password/change',[App\Http\Controllers\ChangePasswordController::class, 'update'])->name('password.change');
 
 });

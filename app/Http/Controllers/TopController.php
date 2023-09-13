@@ -7,7 +7,7 @@ use App\Models\Dish;
 
 class TopController extends Controller
 {    
-    public function home(){
+    public function top(){
         return view('top');
     }
 
