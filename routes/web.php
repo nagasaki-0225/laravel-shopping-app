@@ -40,7 +40,6 @@ Route::group(['middleware' => 'auth'], function () {
     // データ挿入
     Route::post('/dish',[\App\Http\Controllers\DishController::class,'store'])->name('dish.store');
     
-    
     // 在庫管理の表示
     Route::get('/stock',[\App\Http\Controllers\StockController::class,'index'])->name('stock');
     // 在庫データの追加
@@ -48,9 +47,6 @@ Route::group(['middleware' => 'auth'], function () {
     // 在庫の更新機能
     Route::patch('/stock/{stock}', [\App\Http\Controllers\StockController::class, 'update'])->name('stock.update');
     Route::delete('/stock/{stock}', [\App\Http\Controllers\StockController::class, 'destroy'])->name('stock.destroy');
-
-
-
     
     Route::get('/list',[\App\Http\Controllers\TopController::class,'list'])->name('list');
     
