@@ -7,14 +7,15 @@ $(function() {
         if ($(this).prop('checked')) {
             // append 追加する
             $('.selected_dishes').append(
-                '<span>' + 
-                '<input checked type="checkbox"' + 
+                '<div class="mb-3" ' + 
+                ' id="select_frame_' + $(this).attr('id') +
+                '">' + 
+                '<input checked type="checkbox" class="checked_dish"' + 
                 'value= "' + $(this).val() +
                 '" name="selected_dishes['+ $(this).attr('id') +'][name]">'+ $(this).val() +
                 '<br>' +
-                '<input checked type="number" name="selected_dishes['+ $(this).attr('id') +'][amount]">' + 
-                '</span>' + 
-                '<br>'
+                '<input checked type="number" name="selected_dishes['+ $(this).attr('id') +'][amount]" value="1">' + 
+                '</div>'
             );
         } else {
             $(".selected_dishes input[type='checkbox']").each(function(item) {
@@ -24,15 +25,21 @@ $(function() {
             });
         }
     });
+
+    $('.selected_dishes').on('click', '.checked_dish', function() {
+        let name = $(this).attr('name');
+        let id = name.replace(/[^0-9]/g, '');
+        $('#select_frame_' + id).remove();
+        $('#'+ id).prop('checked', false);
+    });
+
+    $(window).on('load resize', function(){
+        if (window.matchMedia('(max-width: 425px)').matches){
+            $('#slideToggle').click(function(){
+                $(this).toggleClass('clicked');
+                $('#select').toggleClass('clicked');
+                $('.select-content-bg').toggleClass('clicked');
+            });
+        }
+    });
 });
-
-
-  $(window).on('load resize', function(){
-    if (window.matchMedia('(max-width: 425px)').matches){
-    $('#slideToggle').click(function(){
-    $(this).toggleClass('clicked');
-    $('#select').toggleClass('clicked');
-    $('.select-content-bg').toggleClass('clicked');
-    });
-    }
-    });
