@@ -66,7 +66,7 @@ class TopController extends Controller
             }
         }
     
-        dd($stocks); 
+
     
         return view('list', ['dishes' => $dishes, 'groupedStocks' => $stocks]);
     }    
