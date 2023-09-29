@@ -39,14 +39,12 @@
                     @endforeach
                 </div>
             </div>
-            
-
-            <div class="col-md-3 rounded text-center pt-1 d-block" style="background-color: #d9d9d9">
-                <h3>献立リスト</h3>
-                @foreach ($dishes as $dish)
-                    <h4>{{ $dish->name }}</h4>
-                @endforeach
-            </div>
+        </div>
+        <div class="col-md-3 rounded text-center pt-1 d-block" style="background-color: #d9d9d9">
+            <h3>献立リスト</h3>
+            @foreach ($dishes as $dish)
+                <h4>{{ $dish->name }}</h4>
+            @endforeach
         </div>
     </div>
 </div>
