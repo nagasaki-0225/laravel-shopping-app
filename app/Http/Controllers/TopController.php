@@ -24,6 +24,8 @@ class TopController extends Controller
         }
     
         $all_needs_stocks = [];
+
+        $dishes = collect();
     
         foreach ($request->selected_dishes as $dish_id => $value) {
             $dish = Dish::find($dish_id);
@@ -43,6 +45,7 @@ class TopController extends Controller
                     $all_needs_stocks[$shopName][$stock->id] = $needed_stock;
                 }
             }
+            $dishes[] = $dish;
         }
     
         $stocks = [];
