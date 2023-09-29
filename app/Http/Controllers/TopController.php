@@ -25,7 +25,6 @@ class TopController extends Controller
     
         $all_needs_stocks = [];
     
-        // Calculate the total amount needed for each stock
         foreach ($request->selected_dishes as $dish_id => $value) {
             $dish = Dish::find($dish_id);
             $dish->amount = $value['amount'];
@@ -48,7 +47,6 @@ class TopController extends Controller
     
         $stocks = [];
     
-        // Retrieve the details for each shop
         foreach ($all_needs_stocks as $shopName => $neededStocks) {
             foreach ($neededStocks as $stock_id => $needed_amount) {
                 $result = DB::table('stocks')
@@ -67,7 +65,6 @@ class TopController extends Controller
     
         dd($stocks); 
     
-        return view('list', ['dishes' => []]);
-    }
-    
+        return view('list', ['dishes' => $dishes, 'groupedStocks' => $stocks]);
+    }    
 }
