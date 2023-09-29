@@ -30,8 +30,13 @@
                                 <p>個数：{{ $stock->item_number }} {{ $stock->item_unit }}</p>
                                 <p>金額：{{ $stock->price }}円</p>
                                 @php
-                                    $shopTotal += $stock->item_number * $stock->price;
-                                    $grandTotal += $stock->item_number * $stock->price;
+                                    if ($stock->item_unit == "ml" || $stock->item_unit == "g"){
+                                        $shopTotal += $stock->price;
+                                        $grandTotal += $stock->price;
+                                    } else {
+                                        $shopTotal += $stock->item_number * $stock->price;
+                                        $grandTotal += $stock->item_number * $stock->price;
+                                    }
                                 @endphp
                             @endforeach
                             <p><strong>この店の合計：{{ $shopTotal }}円</strong></p>
