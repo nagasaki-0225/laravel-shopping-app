@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input class="btn btn-primary mt-2" type="submit" value="パスワードを変更する">
+                        <input class="btn" type="submit" value="パスワードを変更する">
                     </div>
                 </form>
 

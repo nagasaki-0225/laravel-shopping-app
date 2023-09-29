@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,11 +51,14 @@ Route::group(['middleware' => 'auth'], function () {
     
     Route::get('/list',[\App\Http\Controllers\TopController::class,'list'])->name('list');
     
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('my_page.index');
-    Route::post('/user/update',[App\Http\Controllers\HomeController::class, 'update'])->name('user.update');
-    Route::get('/mypage/edit', [App\Http\Controllers\HomeController::class, 'edit'])->name('my_page.edit');
+    Route::get('/home', [App\Http\Controllers\UsersController::class, 'index'])->name('my_page.index');
+    Route::post('/user/update',[App\Http\Controllers\UsersController::class, 'update'])->name('user.update');
+    Route::get('/mypage/edit', [App\Http\Controllers\UsersController::class, 'edit'])->name('my_page.edit');
+    Route::delete('/home', [App\Http\Controllers\UsersController::class, 'destroyUserDelete'])->name('destroyUserDelete')->middleware('verified');
+
 
     Route::get('/password/change',[App\Http\Controllers\ChangePasswordController::class, 'edit'])->name('my_page.edit_password');
     Route::put('/password/change',[App\Http\Controllers\ChangePasswordController::class, 'update'])->name('password.change');
+
 
 });

@@ -52,8 +52,14 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],   
         ]);
+         // 過去に論理削除されたメールアドレスで再登録しようとしたとき
+         $user = User::where('email', $data['email'])->withTrashed()->first();
+         if ($user && $user->deleted_at !== null) {
+             // 過去のデータを物理削除
+             $user->forceDelete();
+    }
     }
 
     /**

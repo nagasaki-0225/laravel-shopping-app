@@ -1,15 +1,8 @@
-.example1{
+.card-body{
     display: block;
-    color: #FFF;
-    /* 下線を消す */
-    text-decoration: none;
-    background-color: #d9d9d9;
-    border-radius: 10px;
-    text-align: center;
-    width: 100%;
-    margin: 50px 0px;
-    padding: 20px;
 }
+
+
 
 label{
     display: block;
@@ -23,19 +16,20 @@ label{
     margin: 30px 0px;
     padding: 20px;
 }
-.form-control{
-    text-align: center;
-}
 
-.btn{
+button{
     display: block;
     color: #FFF;
     /* 下線を消す */
+    text-decoration: none;
     background-color: #B3F6AE;
     border-radius: 10px;
     text-align: center;
-    width: 100%;
-    margin: 50px 0px;
-    padding: 20px;
-   
+    border: none;
+    width: 50%;
+    padding: 10px;
+}
+
+.form-check-label{
+    background-color: none;
 }

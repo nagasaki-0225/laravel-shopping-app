@@ -30,14 +30,25 @@ class HomeController extends Controller
         return view('my_page.index');
     }
 
-    public function update(Request $request)
+    public function update(Request $request,User $use)
     {
         $user = Auth::user();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->save();
-        // return redirect()->route('');//保存後はリダイレクトさせたいページを指定したりする
+        foreach ($user as $key => $value) {
 
+            // nullの場合更新対象から除外する
+            
+            if($value == null) {
+            
+            unset($user[$key]);
+            
+            }
+        }
+
+        $user->save();
+        return redirect()->route('my_page.index');
+        // return redirect()->route('');//保存後はリダイレクトさせたいページを指定したりする
     }
 
     public function edit(User $user) {
