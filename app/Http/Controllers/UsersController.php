@@ -32,9 +32,9 @@ class UsersController extends Controller
         // 論理削除
         $user->delete();
         // 退会完了ページへリダイレクト
-        return redirect()->route('userDeleteComplete');
+        return redirect()->route('after_user_delete');
     }
     public function userDeleteComplete(){
-        return view('my_page.userDeleteComplete');
+        return view('my_page.userDelete');
     }
 }

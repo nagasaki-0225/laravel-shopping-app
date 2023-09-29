@@ -19,13 +19,11 @@
         </form>
 
             
-            
-            <a href="{{ route('destroyUserDelete') }}" class="example1">退会</a>
-            <form method="post" action="{{ route('destroyUserDelete') }}">
+            <form method="post" action="{{ route('destroyUserDelete') }}" class="example1">
                 @csrf
                 @method('delete')
                 <input type="submit" value="退会する">
-            </form>
+            </form></a>
         </div>
 
        

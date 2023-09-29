@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StockController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UsersController;
 
 /*
@@ -15,6 +14,8 @@ use App\Http\Controllers\UsersController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/deleted', [App\Http\Controllers\UsersController::class, 'userDeleteComplete'])->name('after_user_delete');
+
 
 Auth::routes();
 
@@ -55,7 +56,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/user/update',[App\Http\Controllers\UsersController::class, 'update'])->name('user.update');
     Route::get('/mypage/edit', [App\Http\Controllers\UsersController::class, 'edit'])->name('my_page.edit');
     Route::delete('/home', [App\Http\Controllers\UsersController::class, 'destroyUserDelete'])->name('destroyUserDelete')->middleware('verified');
-
+   
 
     Route::get('/password/change',[App\Http\Controllers\ChangePasswordController::class, 'edit'])->name('my_page.edit_password');
     Route::put('/password/change',[App\Http\Controllers\ChangePasswordController::class, 'update'])->name('password.change');
