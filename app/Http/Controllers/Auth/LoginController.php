@@ -35,6 +35,12 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        
         $this->middleware('guest')->except('logout','register','showRegistrationForm');
+    }
+    public function logout()
+    {
+        auth()->logout();
+        return redirect()->route('login');
     }
 }
