@@ -6,7 +6,7 @@
     font-size: 50px;
     padding: 0px 0px 10px 0px ;
     margin: 5px;
-    background: #B3F6AE;
+    background: #88B884;
     color: #FFF;
     text-decoration: none;
     text-align: center;
@@ -15,7 +15,7 @@
 }
 
 .example:hover{
-    background: #B3F6AE;
+    background: #88B884;
 }
 
 .example-btn{

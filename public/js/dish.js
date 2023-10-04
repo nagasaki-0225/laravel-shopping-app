@@ -14,7 +14,7 @@ $(function() {
                 'value= "' + $(this).val() +
                 '" name="selected_dishes['+ $(this).attr('id') +'][name]">'+ $(this).val() +
                 '<br>' +
-                '<input checked type="number" name="selected_dishes['+ $(this).attr('id') +'][amount]" value="1">' + 
+                '<input checked type="number" id="amount_frame" name="selected_dishes['+ $(this).attr('id') +'][amount]" value="1">' + 
                 '</div>'
             );
         } else {

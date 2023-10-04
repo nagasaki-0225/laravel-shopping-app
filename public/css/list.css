@@ -1,7 +1,34 @@
 .total{
     position: fixed;
-    bottom: 100px;
-    right: 300px;
+    bottom: 15%;
     font-family: 'Ingrid Darling', 'cursive';
-    font-size: 50px;
+    font-size: 2rem;
+    color: black;
+}
+@media(max-width:425px){
+    .total{
+      width:80%;
+      position: fixed;
+      bottom: 13%;
+    }
+    #choiceDish{
+        margin-top: 10px;
+
+    }
+}
+
+#shopPrice:nth-child(even) {
+    background-color: #B3F6AE; 
+  }
+
+#shopPrice:nth-child(odd){
+    background-color:#AEF2F6;
+}
+
+.table{
+    background-color:transparent;
+}
+
+#choiceDish{
+    color: #fff;
 }

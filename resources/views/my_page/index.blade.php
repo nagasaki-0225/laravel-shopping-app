@@ -22,7 +22,7 @@
             <form method="post" action="{{ route('destroyUserDelete') }}" class="example1">
                 @csrf
                 @method('delete')
-                <input type="submit" value="退会する">
+                <input type="submit" value="退会する" class="button">
             </form></a>
         </div>
 
