@@ -15,7 +15,9 @@ use App\Http\Controllers\UsersController;
 |
 */
 Route::get('/deleted', [App\Http\Controllers\UsersController::class, 'userDeleteComplete'])->name('after_user_delete');
-
+Route::get('/', function () {
+    return redirect('login');
+});
 
 Auth::routes();
 
