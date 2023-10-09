@@ -3,6 +3,16 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="addDishModalLabel">追加</h5>
+
+{{-- 検索バー --}}
+                {{-- <div class="search">
+                    <form action={{ route('stock') }} method="GET">
+                        <input type="text" name="keyword" value="{{ $keyword }}" placeholder="search:" class="searchTerm" >
+                        <button type="submit" class="searchButton"><i class="fa fa-search"></i></button>
+                    </form>
+                </div> --}}
+{{-- 検索バー --}}
+
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
             </div>
             <form action="{{ route('dish.update', $dish) }}" method="post">
