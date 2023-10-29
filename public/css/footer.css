@@ -50,10 +50,18 @@
     }
 }
 
-@media(min-width:769px){
+
+@media(min-width:1024px){
     .pc{
         position: relative;
-        left:40%;
+        left:20%;
+    }
+}
+
+@media(min-width:1440px){
+    .pc{
+        position: relative;
+        left:35%;
     }
 }
 .navbar-brand{

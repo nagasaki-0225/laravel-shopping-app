@@ -7,12 +7,14 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-    public function update(Request $request)
+    public function update(Request $request, User $user)
     {
         $user = Auth::user();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->save();
+        $user->name = $request->input('name') ? $request->input('name') : $user->name;
+        $user->email = $request->input('email') ? $request->input('email') : $user->email;
+        // $user->name = $request->name;
+        // $user->email = $request->email;
+        $user->update();
         return redirect()->route('my_page.index')->with('msg_success', 'プロフィールの更新が完了しました');
     }
 
