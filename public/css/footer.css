@@ -64,6 +64,20 @@
         left:35%;
     }
 }
+
+@media(min-width:1024px){
+    .pc{
+        position: relative;
+        left:25%;
+    }
+}
+@media(min-width:1440px){
+    .pc{
+        position: relative;
+        left:40%;
+    }
+}
+    
 .navbar-brand{
     font-family: 'Ingrid Darling', 'cursive';
     font-size: 40px;
