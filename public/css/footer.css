@@ -20,7 +20,7 @@
 
 .example-btn{
     display: inline-block;
-    font-family: 'Ingrid Darling', 'cursive';
+    font-family: "Ingrid Darling", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
     font-size: 4vw;
     color: #FFF;
     /* 下線を消す */

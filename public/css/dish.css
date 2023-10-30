@@ -24,7 +24,7 @@
     border-radius: 5px 0 0 5px;
     outline: none;
     color: #fff;
-    font-family: 'Ingrid Darling', 'cursive';
+    font-family: 'Ingrid Darling','Kosugi Maru', sans-serif;
     background-color:#d9d9d9;
     font-size: 30px;
   }
@@ -72,7 +72,7 @@ h3{
   height: 35px;
   border-radius: 5px 0 0 5px;
   outline: none;
-  font-family: 'Ingrid Darling', 'cursive';
+  font-family: 'Ingrid Darling','Kosugi Maru', sans-serif;
   background-color:#fff;
   color: #d9d9d9;
   font-size: 30px;

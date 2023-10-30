@@ -38,7 +38,7 @@
             <div class="selectDish">
                 <h3>選択中</h3> 
                 {{-- getでlistページに値を渡す --}}
-                <form action="{{ route('list')}}" method="get">
+                <form action="{{ route('list')}}" method="get" id="select_d">
                     <div class="selected_dishes">
 
                     </div>
