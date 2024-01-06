@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Dish;
 use Illuminate\Support\Facades\Auth;
@@ -15,9 +14,6 @@ use Illuminate\Support\Facades\DB;
 class DishController extends Controller
 {
     public function index(Request $request) {
-        // Authクラスは、ログインしているユーザーの情報を取得するためのクラス
-        $dishes=Dish::where("user_id", Auth::id())->get();
-        // resources/views/dish/index.blade.php を表示
 
         $keyword = $request->input('keyword');
 
@@ -29,12 +25,18 @@ class DishController extends Controller
 
         $dishes = $query->get();
 
+        $user_id = Auth::id();
+        // Authクラスは、ログインしているユーザーの情報を取得するためのクラス  
+        $dishes=Dish::where("user_id", Auth::id())->get();
+        // resources/views/dish/index.blade.php を表示
+
         return view('dish.index', compact('dishes','keyword'));
     
     }
 
     // 料理の詳細ページを表示（dish.show）
-    public function show(Dish $dish) {    
+    public function show(Dish $dish) {  
+        $user_id = Auth::id();  
         $stocks=Stock::where("user_id",Auth::id())->get();
 
         return view('dish.show',compact('dish','stocks'));

@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Stock;
+use App\Models\Stock;   //在庫データを扱えるように
+use App\Models\User;   //ユーザーデータを扱えるように
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth; //ログインユーザーのデータをあつかえる
 
 
 class StockController extends Controller
 {
     public function index(Request $request) { 
-        // Select * from stocks where user_id = 1;
-        $stocks=Stock::where("user_id", Auth::id())->get();    
         
         $keyword = $request->input('keyword');
 
@@ -23,7 +22,12 @@ class StockController extends Controller
 
         $stocks = $query->get();
 
-        return view('stock.stock', compact('stocks','keyword'));
+        // Select * from stocks where user_id = 1;
+        $user_id = Auth::id(); //ログインユーザーのidを取得
+        $stocks=Stock::with('user')->where('user_id','=', $user_id)->simplePaginate();
+        // return view('stock.stock', ['stocks' => $stocks]); // views/stock.blade.phpに取得データを渡す
+
+        return view('stock.stock',compact('stocks','keyword'));
     
     }
     public function create() {        
