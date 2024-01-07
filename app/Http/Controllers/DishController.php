@@ -25,10 +25,7 @@ class DishController extends Controller
 
         $dishes = $query->get();
 
-        $user_id = Auth::id();
-        // Authクラスは、ログインしているユーザーの情報を取得するためのクラス  
         $dishes=Dish::where("user_id", Auth::id())->get();
-        // resources/views/dish/index.blade.php を表示
 
         return view('dish.index', compact('dishes','keyword'));
     

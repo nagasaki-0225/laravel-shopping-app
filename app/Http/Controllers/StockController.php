@@ -13,20 +13,15 @@ class StockController extends Controller
     public function index(Request $request) { 
         
         $keyword = $request->input('keyword');
-
         $query = Stock::query();
 
         if(!empty($keyword)) {
             $query->where('name', 'LIKE', "%{$keyword}%");
         }
-
         $stocks = $query->get();
 
         // Select * from stocks where user_id = 1;
-        $user_id = Auth::id(); //ログインユーザーのidを取得
-        $stocks=Stock::with('user')->where('user_id','=', $user_id)->simplePaginate();
-        // return view('stock.stock', ['stocks' => $stocks]); // views/stock.blade.phpに取得データを渡す
-
+        $stocks=Stock::where("user_id", Auth::id())->get();  
         return view('stock.stock',compact('stocks','keyword'));
     
     }
