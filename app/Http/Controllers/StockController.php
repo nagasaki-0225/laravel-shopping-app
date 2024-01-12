@@ -10,21 +10,18 @@ use Illuminate\Support\Facades\Auth; //ログインユーザーのデータを�
 
 class StockController extends Controller
 {
-    public function index(Request $request) { 
-        
+    public function index(Request $request) {
         $keyword = $request->input('keyword');
-        $query = Stock::query();
-
-        if(!empty($keyword)) {
-            $query->where('name', 'LIKE', "%{$keyword}%");
-        }
-        $stocks = $query->get();
-
-        // Select * from stocks where user_id = 1;
-        $stocks=Stock::where("user_id", Auth::id())->get();  
-        return view('stock.stock',compact('stocks','keyword'));
-    
+        $stocks = Stock::where('user_id', Auth::id())
+                        ->where(function ($query) use ($keyword) {
+                            if (!empty($keyword)) {
+                                $query->where('name', 'LIKE', "%{$keyword}%");
+                            }
+                        })
+                        ->get();
+        return view('stock.stock', compact('stocks', 'keyword'));
     }
+   
     public function create() {        
         return view('stock.create');
     }

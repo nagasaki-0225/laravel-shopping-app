@@ -14,22 +14,17 @@ use Illuminate\Support\Facades\DB;
 class DishController extends Controller
 {
     public function index(Request $request) {
-
         $keyword = $request->input('keyword');
-
-        $query = Dish::query();
-
-        if(!empty($keyword)) {
-            $query->where('name', 'LIKE', "%{$keyword}%");
-        }
-
-        $dishes = $query->get();
-
-        $dishes=Dish::where("user_id", Auth::id())->get();
-
-        return view('dish.index', compact('dishes','keyword'));
-    
+        $dishes = Dish::where('user_id', Auth::id())
+                        ->where(function ($query) use ($keyword) {
+                            if (!empty($keyword)) {
+                                $query->where('name', 'LIKE', "%{$keyword}%");
+                            }
+                        })
+                        ->get();
+        return view('dish.index', compact('dishes', 'keyword'));
     }
+    
 
     // 料理の詳細ページを表示（dish.show）
     public function show(Dish $dish) {  
