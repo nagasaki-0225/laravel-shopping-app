@@ -26,7 +26,12 @@ class StockController extends Controller
         return view('stock.create');
     }
     public function store(Request $request) {
-        
+        $request->validate([
+            'name' => 'required',
+            'number' =>'required',
+            'item_unit' => 'required',
+            'price' => 'required'
+        ]);
         $stock = new Stock();
         $stock->name = $request->input('name');
         $stock->number = $request->input('number');
@@ -39,7 +44,12 @@ class StockController extends Controller
         return redirect()->route('stock')->with('flash_message', 'データを登録しました。');
     }
     public function update(Request $request, Stock $stock) {
-        
+        $request->validate([
+            'name' => 'required',
+            'number' =>'required',
+            'item_unit' => 'required',
+            'price' => 'required'
+        ]);
 
         $stock->name = $request->input('name');
         $stock->number = $request->input('number');

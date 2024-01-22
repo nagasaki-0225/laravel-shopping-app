@@ -153,6 +153,16 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+
+        'number' => '在庫数',
+        'item_unit' => '単位',
+        'price' => '金額',
+        'shop_name' => '店名',
+        'item_number' => '必要量',
+        'stocks' => '食材名'
+
+
+    ],
 
 ];

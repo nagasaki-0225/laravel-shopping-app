@@ -8,6 +8,15 @@
 <div class="container">
 	<div class="row">
 		 
+		<div>  
+    @if ($errors->any())  
+        <ul>  
+            @foreach ($errors->all() as $error)  
+                <li>{{ $error }}</li>  
+            @endforeach  
+        </ul>  
+    @endif  
+</div>
 		<div class="col-md-3">
 			<div class="icon">
 					<img width=150 height=150  src="{{$dish->image_path ?? "https://placehold.jp/150x150.png"}}" class="rounded-circle">
@@ -53,7 +62,7 @@
 			<a href="#" class="px-2 m-1 fs-5 link-dark text-decoration-none" data-bs-toggle="modal" data-bs-target="#addDishModal"><h1><i class="fa-solid fa-square-plus" style="color: #D9D9D9;"></i>追加</h1></a>                
 		</div>
 		<div>
-			<button type="button" class="back" onClick="history.back()"><h1><i class="fa-solid fa-arrow-rotate-left" style="color: #D9D9D9;"></i>戻る</h1></button>     
+			<a href="{{ route('dish.index') }}" class="back"><h1><i class="fa-solid fa-arrow-rotate-left" style="color: #D9D9D9;"></i>戻る</h1></a>     
 		</div>
 	</div>
 </div>

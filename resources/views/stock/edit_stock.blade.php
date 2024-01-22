@@ -5,6 +5,7 @@
                 <h5 class="modal-title" id="editStockModalLabel{{ $stock->id }}">編集</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
             </div>
+
             <form action="{{ route('stock.update', $stock) }}" method="post">
                 @csrf
                 @method('patch')                                                                    

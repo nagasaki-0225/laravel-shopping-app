@@ -15,15 +15,6 @@
 
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
             </div>
-            {{-- @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                    </ul>
-                </div>
-            @endif --}}
             
             <form action="{{ route('dish.update', $dish) }}" method="post">
                 @csrf
@@ -36,23 +27,25 @@
                                 $flag_id = 0;
                             @endphp
                             @foreach($dish->stocks as $dish_stock)
-                                @if($stock->id == $dish_stock->id)
-                                    <div class="form-check mb-2">
-                                        <input class="form-check-input" type="checkbox" value="{{ $stock->id }}" id="stock-{{ $stock->id }}" name="stocks[]"
-                                        @if(in_array($dish_stock->id, $dish->stocks->pluck('id')->toArray())) checked @endif>
-                                        <label class="form-check-label" for="stock-{{ $stock->id }}">
-                                            {{ $stock->name }}   ({{$stock->item_unit}})
-                                        </label>
-                                        
-                                        {{-- valueの値 --}}
-                                        <input type="number" value="{{ old('item_number', $dish_stock->pivot->item_number ?? '' ) }}"                                
-                                            class="form-control" id="item-number-{{ $stock->id }}" name="item_numbers[{{ $stock->id }}]">
-                                    </div>
+                            @if($stock->id == $dish_stock->id)
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="{{ $stock->id }}" id="stock-{{ $stock->id }}" name="stocks[]"
+                                    @if(in_array($dish_stock->id, $dish->stocks->pluck('id')->toArray())) checked @endif>
+                                    <label class="form-check-label" for="stock-{{ $stock->id }}">
+                                        {{ $stock->name }}   ({{$stock->item_unit}})
+                                    </label>
+                                    {{-- valueの値 --}}
                                     @php
-                                        $flag_id = $dish_stock->id;
+                                        $defaultItemNumber = $dish_stock->pivot->item_number ?? 0;
                                     @endphp
-                                @endif
-                            @endforeach
+                                    <input type="number" value="{{ old('item_numbers.'.$stock->id, $defaultItemNumber ) }}"                                
+                                        class="form-control" id="item-number-{{ $stock->id }}" name="item_numbers[{{ $stock->id }}]">
+                                </div>
+                                @php
+                                    $flag_id = $dish_stock->id;
+                                @endphp
+                            @endif
+                        @endforeach
                             @if ($flag_id == $stock->id)
                                 @continue
                             @else

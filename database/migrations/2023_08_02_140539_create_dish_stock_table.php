@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('dish_stock', function (Blueprint $table) {
             $table->id();
-            $table->double('item_number');
+            $table->double('item_number')->nullable();
             $table->foreignId('stock_id')->constrained()->cascadeOnDelete();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('dish_id')->constrained()->cascadeOnDelete();

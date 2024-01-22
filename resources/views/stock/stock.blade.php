@@ -6,6 +6,13 @@
 @section('content')
 
 <div class="container">
+	@if ($errors->any())  
+				<ul>  
+					@foreach ($errors->all() as $error)  
+						<li>{{ $error }}</li>  
+					@endforeach  
+				</ul>  
+			@endif  
 	<div class="search">
         <form action="{{ route('stock') }}" method="GET"> 
             <input type="text" name="keyword" value="{{ $keyword }}" placeholder="search:" class="searchTerm" >

@@ -35,7 +35,9 @@ class DishController extends Controller
     }
 
     public function store(Request $request, Dish $dish, Stock $stock) {    
-    
+        $request->validate([
+            'name' => 'required'
+        ]);
             $dish = new Dish();
             $dish->name = $request->input('name');
             $dish->user_id = Auth::id();
@@ -46,6 +48,9 @@ class DishController extends Controller
 
     // 画像のアップロード
     public function upload(Request $request, Dish $dish){
+        $request->validate([
+            'image_path' => 'nullable',
+        ]);
         $path = $request->file('image')->store('images', 's3');
         Storage::disk('s3')->setVisibility($path, 'public');
         $dish->image_path=Storage::disk('s3')->url($path);
@@ -65,9 +70,9 @@ class DishController extends Controller
     // 料理の情報を追加する
     public function update(Request $request, Dish $dish) {
         $request->validate([
-            'stocks' => 'required|array',
-            'item_numbers' => 'required|array',
-            // 'item_numbers.*' => 'nullable|numeric',
+            'stocks' => 'required',
+            'item_numbers' => 'required',
+            'item_numbers.*' => 'nullable|numeric',
         ]);
         
         $stockIds = $request->input('stocks');

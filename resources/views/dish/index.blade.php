@@ -8,6 +8,14 @@
 
 @section('content')
 <div class="container">
+
+    @if ($errors->any())  
+    <ul>  
+        @foreach ($errors->all() as $error)  
+            <li>{{ $error }}</li>  
+        @endforeach  
+    </ul>  
+@endif  
     
         <button id="slideToggle"><i class="fa-solid fa-circle-left" style="color: #d9d9d9;"></i><br>選<br>択<br>中</button>
     <div class="row">
@@ -47,7 +55,9 @@
 
 
                     <h3><i class="fa-solid fa-circle-plus" style="color: #ffffff;"></i><input type="submit" value="確定" class="okButton"> </h3>
-                    <h3><i class="fa-solid fa-circle-xmark" style="color: #ffffff;"></i><input type="reset" value="リセット" class="resetButton"></h3>
+                    <h3><i class="fa-solid fa-circle-xmark" style="color: #ffffff;"></i><a href="{{ route('dish.index') }}" class="resetButton">リセット</h3></a> 
+
+                    
 
                 </form>
                 
