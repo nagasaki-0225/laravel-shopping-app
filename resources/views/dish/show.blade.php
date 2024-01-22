@@ -44,7 +44,7 @@
 						<td>{{$stock->name}}</td>
 						<td>{{$stock->pivot->item_number}}</td>
 						<td>{{$stock->item_unit}}</td>
-						<td><a href="#" class= "text-decoration-none link-dark" data-bs-toggle="modal" data-bs-target="#deleteDishModal"><h3><i class="fa-solid fa-trash" style="color: #D9D9D9;"></i></h3></a></td>
+						{{-- <td><a href="#" class= "text-decoration-none link-dark" data-bs-toggle="modal" data-bs-target="#deleteDishModal"><h3><i class="fa-solid fa-trash" style="color: #D9D9D9;"></i></h3></a></td> --}}
 						@include('dish.delete_dish')
 					</tr>
 					@endforeach
@@ -58,11 +58,13 @@
 	</div>		
 					   
     <div class="position-fixed bottom-10 end-0 ">
-		<div class="mb-1 button_frame">
+		{{-- <div class="mb-1 button_frame">
 			<a href="#" class="px-2 m-1 fs-5 link-dark text-decoration-none" data-bs-toggle="modal" data-bs-target="#addDishModal"><h1><i class="fa-solid fa-square-plus" style="color: #D9D9D9;"></i>追加</h1></a>                
-		</div>
-		<div>
-			<a href="{{ route('dish.index') }}" class="back"><h1><i class="fa-solid fa-arrow-rotate-left" style="color: #D9D9D9;"></i>戻る</h1></a>     
+		</div> --}}
+		<div class="backDelete">
+			<a href="#" class="px-2 mx-0 fs-5 link-dark text-decoration-none" data-bs-toggle="modal" data-bs-target="#addDishModal"><h1><i class="fa-solid fa-square-plus" style="color: #D9D9D9;"></i>追加</h1></a> 
+			<a href="{{ route('dish.index') }}" class="back"><h1><i class="fa-solid fa-arrow-rotate-left" style="color: #D9D9D9;"></i>戻る</h1></a>
+			<a href="#" class= "text-decoration-none link-dark" data-bs-toggle="modal" data-bs-target="#deleteDishModal"><h1><i class="fa-solid fa-trash" style="color: #D9D9D9;">消去</i></h1></a>   
 		</div>
 	</div>
 </div>

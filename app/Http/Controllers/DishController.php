@@ -108,12 +108,8 @@ class DishController extends Controller
     
 
     // 料理の削除（index画面）
-    public function destroy(Dish $dish) {
-        $dish->delete();
-        return redirect()->route('dish.index');        
-   }
-
-
-    
-
-}
+        public function destroy(Dish $dish) {
+            $dish->delete();
+            return redirect()->route('dish.index');        
+       }
+    }
