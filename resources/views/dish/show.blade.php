@@ -50,8 +50,12 @@
 					   
     <div class="position-fixed bottom-10 end-0 ">
 		<div class="mb-1 button_frame">
-			<a href="#" class="px-2 m-1 fs-5 link-dark text-decoration-none" data-bs-toggle="modal" data-bs-target="#addDishModal"><h1><i class="fa-solid fa-square-plus" style="color: #D9D9D9;"></i>追加</h1></a>                     
+			<a href="#" class="px-2 m-1 fs-5 link-dark text-decoration-none" data-bs-toggle="modal" data-bs-target="#addDishModal"><h1><i class="fa-solid fa-square-plus" style="color: #D9D9D9;"></i>追加</h1></a>                
+		</div>
+		<div>
+			<button type="button" class="back" onClick="history.back()"><h1><i class="fa-solid fa-arrow-rotate-left" style="color: #D9D9D9;"></i>戻る</h1></button>     
 		</div>
 	</div>
 </div>
+
 @endsection

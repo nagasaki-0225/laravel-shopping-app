@@ -54,27 +54,31 @@
 @media(min-width:1024px){
     .pc{
         position: relative;
-        left:20%;
+        display: flex;
+        flex-wrap: nowrap;/*flexアイテムを折り返さない*/
     }
 }
 
 @media(min-width:1440px){
     .pc{
         position: relative;
-        left:35%;
+        display: flex;
+        flex-wrap: nowrap;/*flexアイテムを折り返さない*/
     }
 }
 
 @media(min-width:1024px){
     .pc{
         position: relative;
-        left:25%;
+        display: flex;
+        flex-wrap: nowrap;/*flexアイテムを折り返さない*/
     }
 }
 @media(min-width:1440px){
     .pc{
         position: relative;
-        left:40%;
+        display: flex;
+        flex-wrap: nowrap;/*flexアイテムを折り返さない*/
     }
 }
     

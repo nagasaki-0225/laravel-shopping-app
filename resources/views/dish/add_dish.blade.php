@@ -15,6 +15,16 @@
 
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
             </div>
+            {{-- @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                    </ul>
+                </div>
+            @endif --}}
+            
             <form action="{{ route('dish.update', $dish) }}" method="post">
                 @csrf
                 @method('put')
@@ -33,6 +43,7 @@
                                         <label class="form-check-label" for="stock-{{ $stock->id }}">
                                             {{ $stock->name }}   ({{$stock->item_unit}})
                                         </label>
+                                        
                                         {{-- valueの値 --}}
                                         <input type="number" value="{{ old('item_number', $dish_stock->pivot->item_number ?? '' ) }}"                                
                                             class="form-control" id="item-number-{{ $stock->id }}" name="item_numbers[{{ $stock->id }}]">

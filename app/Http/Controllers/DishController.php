@@ -67,7 +67,9 @@ class DishController extends Controller
         $request->validate([
             'stocks' => 'required|array',
             'item_numbers' => 'required|array',
+            // 'item_numbers.*' => 'nullable|numeric',
         ]);
+        
         $stockIds = $request->input('stocks');
         $itemNumbers = $request->input('item_numbers');
     

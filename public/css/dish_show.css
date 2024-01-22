@@ -12,5 +12,14 @@
 }
 
 .bottom-10{
-    bottom :100px;
+    bottom :125px;
+}
+.back{
+    border: none;
+    background-color: transparent;
+    position: fixed;
+    right: 0px;
+    bottom: 100px;
+    margin: 0;
+    padding: 0;
 }
