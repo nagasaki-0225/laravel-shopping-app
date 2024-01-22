@@ -1,5 +1,5 @@
 .example{
-    display: flex;
+    display: inline-block;
     width:60px;
     height: 60px;
     font-family: 'Ingrid Darling', 'cursive';
