@@ -1,5 +1,5 @@
 .example{
-    display: inline-block;
+    display: flex;
     width:60px;
     height: 60px;
     font-family: 'Ingrid Darling', 'cursive';
@@ -44,9 +44,9 @@
 
 @media(max-width:768px){
     .pc{
-        display: inline-block;
         position: relative;
-        left:5%;
+        display: flex;
+        flex-wrap: nowrap;/*flexアイテムを折り返さない*/
     }
 }
 
